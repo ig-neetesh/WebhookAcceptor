@@ -1,0 +1,14 @@
+*.iml
+*.ipr
+*.iws
+target/
+grails-app/views/pdf/
+.idea
+web-app/js/prototype
+web-app/data
+web-app/sampleData
+logs/
+out/
+stacktrace.log
+grails-app/conf/LocalConfig.groovy
+lib/jpedal.jar
