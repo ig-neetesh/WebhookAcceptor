@@ -24,6 +24,7 @@ class EntryController {
         boolean stored = entryService.store(name, hook);
         if (!stored) {
             response.setStatus(404)
+            return render("OK")
         }
         response.setStatus(200)
         render "ok"
