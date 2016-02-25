@@ -21,7 +21,10 @@ class EntryController {
         log.info "Hook event received"
         HookInfo hook = new HookInfo()
         bindData(hook, params)
-        entryService.store(name, hook);
+        boolean stored = entryService.store(name, hook);
+        if (!stored) {
+            response.setStatus(404)
+        }
         response.setStatus(200)
         render "ok"
     }
@@ -30,4 +33,9 @@ class EntryController {
         render entryService.status(n, v) as JSON
     }
 
+    def toggleService() {
+        String name = params.name
+        boolean status = params.boolean("status")
+        [disabledServices: entryService.toggleService(name, status)]
+    }
 }

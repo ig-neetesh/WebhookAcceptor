@@ -70,6 +70,7 @@
         overflow-y: auto;
         overflow-x: hidden;
         direction: rtl;
+        border-right: 2px solid #cccccc;
     }
 
     .leftPane ul {
@@ -95,6 +96,11 @@
         padding: 5px;
     }
 
+    iframe {
+        width: 500px;
+        height: 500px;
+        border: none;
+    }
     </style>
 </head>
 
@@ -160,6 +166,10 @@
     New Events : <b id="values">0</b>
     Please <a style="border: 2px solid #999999;" href="javascript:history.go(0)">Refresh</a> for fresh data.
 </pre>
+<hr/>
+
+<iframe src="${g.createLink(action: 'toggleService')}">
+</iframe>
 <script type="text/javascript">
     $(document).ready(function () {
         setInterval(function () {
